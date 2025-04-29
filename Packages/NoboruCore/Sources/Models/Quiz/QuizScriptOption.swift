@@ -1,6 +1,6 @@
 import Foundation
 
-public enum ScriptOption: String, CaseIterable, Codable {
+public enum QuizScriptOption: String, CaseIterable, Codable {
     case hiragana
     case katakana
     case correct

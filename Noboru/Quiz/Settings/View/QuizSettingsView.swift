@@ -3,7 +3,7 @@ import NoboruCore
 
 struct QuizSettingsView: View {
 
-    @State private var selectedScript: ScriptOption = .hiragana
+    @State private var selectedScript: QuizScriptOption = .hiragana
     @State private var selectedCategory: WordCategory = .hold
     @State private var selectedQuizMode: QuizMode = .multipleChoice
     @State private var showRomaji: Bool = true
@@ -56,7 +56,7 @@ struct QuizSettingsView: View {
     private var alphabetSection: some View {
         Section(header: Text("Alphabet")) {
             Picker("Choose Alphabet", selection: $selectedScript) {
-                ForEach(ScriptOption.allCases, id: \.self) { option in
+                ForEach(QuizScriptOption.allCases, id: \.self) { option in
                     Text(option.displayName).tag(option)
                 }
             }

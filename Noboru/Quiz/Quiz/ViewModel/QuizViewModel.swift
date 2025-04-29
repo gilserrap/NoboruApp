@@ -45,7 +45,7 @@ public final class QuizViewModel: ObservableObject {
         }
     }
 
-    private static func selectKana(for word: Word, basedOn script: ScriptOption) -> String {
+    private static func selectKana(for word: Word, basedOn script: QuizScriptOption) -> String {
         switch script {
         case .hiragana:
             return word.hiragana

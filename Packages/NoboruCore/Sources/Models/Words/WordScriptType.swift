@@ -1,12 +1,12 @@
 import Foundation
 
-public enum ScriptType: String, Codable {
+public enum WordScriptType: String, Codable {
     case hiragana
     case katakana
 }
 
-extension ScriptType {
-    public func toScriptOption() -> ScriptOption {
+extension WordScriptType {
+    public func toScriptOption() -> QuizScriptOption {
         switch self {
         case .hiragana:
             return .hiragana

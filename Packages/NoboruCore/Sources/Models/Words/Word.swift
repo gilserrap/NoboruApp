@@ -6,7 +6,7 @@ public struct Word: Identifiable, Codable {
     public var hiragana: String
     public var katakana: String
     public var meaning: String
-    public var correctScript: ScriptType
+    public var correctScript: WordScriptType
     public var category: WordCategory
 
     public init(
@@ -15,7 +15,7 @@ public struct Word: Identifiable, Codable {
         hiragana: String,
         katakana: String,
         meaning: String,
-        correctScript: ScriptType,
+        correctScript: WordScriptType,
         category: WordCategory
     ) {
         self.id = id
