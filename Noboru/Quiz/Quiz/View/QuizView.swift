@@ -15,7 +15,7 @@ struct QuizView: View {
     }
 
     var body: some View {
-        VStack(spacing: Values.stackSpacing) {
+        VStack(spacing: 24) {
             if viewModel.finished {
                 QuizSummaryView(summary: viewModel.quizSummary)
                 finishButton
@@ -38,19 +38,20 @@ struct QuizView: View {
     }
 
     // MARK: - Buttons
+
     private var nextButton: some View {
         Button(action: {
             viewModel.goToNextQuestion()
         }) {
             Text("Next")
-                .font(.headline)
+                .font(Values.Font.button)
                 .padding()
-                .frame(maxWidth: .infinity)
+                .frame(maxWidth: .infinity, minHeight: Values.Button.height)
                 .background(Color.accentColor)
                 .foregroundColor(.white)
-                .cornerRadius(Values.buttonCornerRadius)
+                .cornerRadius(Values.Button.cornerRadius)
         }
-        .animation(.easeInOut(duration: 0.3), value: viewModel.showAnswerResult)
+        .animation(.easeInOut(duration: Values.Button.animationDuration), value: viewModel.showAnswerResult)
         .opacity(viewModel.showAnswerResult ? 1 : 0)
         .disabled(!viewModel.showAnswerResult)
     }
@@ -60,35 +61,34 @@ struct QuizView: View {
             dismiss()
         }) {
             Text("Finish")
-                .font(.headline)
+                .font(Values.Font.button)
                 .foregroundColor(.white)
                 .padding()
-                .frame(maxWidth: .infinity)
+                .frame(maxWidth: .infinity, minHeight: Values.Button.height)
                 .background(Color.accentColor)
-                .cornerRadius(Values.buttonCornerRadius)
+                .cornerRadius(Values.Button.cornerRadius)
         }
     }
-
 
     // MARK: - Sections
 
     private var progressSection: some View {
         Text("Question \(viewModel.currentQuestionIndex + 1) of \(viewModel.questions.count)")
-            .font(.headline)
+            .font(Values.Font.progress)
             .foregroundColor(.secondary)
     }
 
     private var questionSection: some View {
         let kanaCharacters = viewModel.currentQuestion.kanaText.map(String.init)
-        return HStack(spacing: 8) {
+        return HStack(spacing: 16) {
             ForEach(0..<kanaCharacters.count, id: \.self) { index in
                 VStack(spacing: 8) {
                     Text(kanaCharacters[index])
-                        .font(.system(size: Values.questionFontSize, weight: .bold))
+                        .font(.system(size: Values.FontSize.question, weight: .bold))
 
                     if viewModel.settings.showRomaji {
                         Text(convertKanaToRomaji(kana: kanaCharacters[index]))
-                            .font(.system(size: Values.romajiFontSize))
+                            .font(.system(size: Values.FontSize.romaji))
                             .foregroundColor(.secondary)
                     }
                 }
@@ -107,7 +107,7 @@ struct QuizView: View {
     }
 
     private var multipleChoiceSection: some View {
-        VStack(spacing: Values.choiceSpacing) {
+        VStack(spacing: 16) {
             ForEach(0..<(viewModel.currentQuestion.options?.count ?? 0), id: \.self) { index in
                 Button(action: {
                     viewModel.handleMultipleChoiceAnswer(index)
@@ -115,17 +115,31 @@ struct QuizView: View {
                     Text(viewModel.currentQuestion.options?[index] ?? "")
                         .frame(maxWidth: .infinity)
                         .padding()
-                        .background(viewModel.buttonBackground(for: index))
+                        .background(buttonBackground(for: index))
                         .foregroundColor(.primary)
-                        .cornerRadius(Values.buttonCornerRadius)
+                        .cornerRadius(Values.Button.cornerRadius)
                 }
                 .disabled(viewModel.showAnswerResult)
             }
         }
     }
 
+    private func buttonBackground(for index: Int) -> Color {
+        guard viewModel.showAnswerResult else {
+            return Values.Color.neutral
+        }
+
+        if index == viewModel.currentQuestion.options?.firstIndex(of: viewModel.currentQuestion.correctAnswer) {
+            return Values.Color.correct
+        } else if index == viewModel.selectedAnswerIndex {
+            return Values.Color.incorrect
+        } else {
+            return Values.Color.neutral
+        }
+    }
+
     private var freeInputSection: some View {
-        VStack(spacing: Values.inputSpacing) {
+        VStack(spacing: 16) {
             TextField("Type your answer", text: $viewModel.userInput)
                 .textFieldStyle(.roundedBorder)
                 .padding()
@@ -134,28 +148,43 @@ struct QuizView: View {
                 viewModel.handleFreeInputAnswer()
             }) {
                 Text("Submit")
-                    .font(.headline)
-                    .frame(maxWidth: .infinity)
+                    .font(Values.Font.button)
+                    .frame(maxWidth: .infinity, minHeight: Values.Button.height)
                     .padding()
                     .background(Color.accentColor)
                     .foregroundColor(.white)
-                    .cornerRadius(Values.buttonCornerRadius)
+                    .cornerRadius(Values.Button.cornerRadius)
             }
             .disabled(viewModel.showAnswerResult || viewModel.userInput.isEmpty)
         }
     }
 
     // MARK: - Constants
-
     private struct Values {
-        static let stackSpacing: CGFloat = 24
-        static let questionFontSize: CGFloat = 48
-        static let choiceSpacing: CGFloat = 16
-        static let inputSpacing: CGFloat = 16
-        static let buttonCornerRadius: CGFloat = 12
-        static let romajiFontSize: CGFloat = 16
+        struct FontSize {
+            static let question: CGFloat = 48
+            static let romaji: CGFloat = 16
+        }
+
+        struct Font {
+            static let button: SwiftUI.Font = .headline
+            static let progress: SwiftUI.Font = .headline
+        }
+
+        struct Button {
+            static let cornerRadius: CGFloat = 12
+            static let height: CGFloat = 44
+            static let animationDuration: Double = 0.3
+        }
+
+        struct Color {
+            static let correct = SwiftUI.Color.green.opacity(0.6)
+            static let incorrect = SwiftUI.Color.red.opacity(0.6)
+            static let neutral = SwiftUI.Color(UIColor.secondarySystemBackground)
+        }
     }
 }
+
 
 #Preview("Multiple Choice Mode") {
     NavigationStack {

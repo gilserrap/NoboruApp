@@ -62,17 +62,4 @@ public final class QuizViewModel: ObservableObject {
             finished = true
         }
     }
-
-    public func buttonBackground(for index: Int) -> Color {
-        guard showAnswerResult else {
-            return Color(UIColor.secondarySystemBackground)
-        }
-        if index == currentQuestion.options?.firstIndex(of: currentQuestion.correctAnswer) {
-            return Color.green.opacity(0.6)
-        } else if index == selectedAnswerIndex {
-            return Color.red.opacity(0.6)
-        } else {
-            return Color(UIColor.secondarySystemBackground)
-        }
-    }
 }
