@@ -1,0 +1,616 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4176F9742DBD3D80007B9932 /* NoboruCore in Frameworks */ = {isa = PBXBuildFile; productRef = 4176F9732DBD3D80007B9932 /* NoboruCore */; };
+		4176F9872DBD4606007B9932 /* Kana in Frameworks */ = {isa = PBXBuildFile; productRef = 4176F9862DBD4606007B9932 /* Kana */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4176F92D2DBCE2EB007B9932 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4176F9172DBCE2EA007B9932 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4176F91E2DBCE2EA007B9932;
+			remoteInfo = Noboru;
+		};
+		4176F9372DBCE2EB007B9932 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4176F9172DBCE2EA007B9932 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4176F91E2DBCE2EA007B9932;
+			remoteInfo = Noboru;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4176F91F2DBCE2EA007B9932 /* Noboru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Noboru.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4176F92C2DBCE2EB007B9932 /* NoboruTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoboruTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4176F9362DBCE2EB007B9932 /* NoboruUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoboruUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4176F9632DBD3B9D007B9932 /* NoboruCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = NoboruCore; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		4176F9212DBCE2EA007B9932 /* Noboru */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Noboru;
+			sourceTree = "<group>";
+		};
+		4176F92F2DBCE2EB007B9932 /* NoboruTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = NoboruTests;
+			sourceTree = "<group>";
+		};
+		4176F9392DBCE2EB007B9932 /* NoboruUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = NoboruUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4176F91C2DBCE2EA007B9932 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4176F9742DBD3D80007B9932 /* NoboruCore in Frameworks */,
+				4176F9872DBD4606007B9932 /* Kana in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4176F9292DBCE2EB007B9932 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4176F9332DBCE2EB007B9932 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4176F9162DBCE2EA007B9932 = {
+			isa = PBXGroup;
+			children = (
+				4176F9642DBD3B9D007B9932 /* Packages */,
+				4176F9212DBCE2EA007B9932 /* Noboru */,
+				4176F92F2DBCE2EB007B9932 /* NoboruTests */,
+				4176F9392DBCE2EB007B9932 /* NoboruUITests */,
+				4176F9722DBD3D80007B9932 /* Frameworks */,
+				4176F9202DBCE2EA007B9932 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4176F9202DBCE2EA007B9932 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4176F91F2DBCE2EA007B9932 /* Noboru.app */,
+				4176F92C2DBCE2EB007B9932 /* NoboruTests.xctest */,
+				4176F9362DBCE2EB007B9932 /* NoboruUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4176F9642DBD3B9D007B9932 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				4176F9632DBD3B9D007B9932 /* NoboruCore */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
+		4176F9722DBD3D80007B9932 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4176F91E2DBCE2EA007B9932 /* Noboru */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4176F9402DBCE2EB007B9932 /* Build configuration list for PBXNativeTarget "Noboru" */;
+			buildPhases = (
+				4176F91B2DBCE2EA007B9932 /* Sources */,
+				4176F91C2DBCE2EA007B9932 /* Frameworks */,
+				4176F91D2DBCE2EA007B9932 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				4176F9212DBCE2EA007B9932 /* Noboru */,
+			);
+			name = Noboru;
+			packageProductDependencies = (
+				4176F9732DBD3D80007B9932 /* NoboruCore */,
+				4176F9862DBD4606007B9932 /* Kana */,
+			);
+			productName = Noboru;
+			productReference = 4176F91F2DBCE2EA007B9932 /* Noboru.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4176F92B2DBCE2EB007B9932 /* NoboruTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4176F9432DBCE2EB007B9932 /* Build configuration list for PBXNativeTarget "NoboruTests" */;
+			buildPhases = (
+				4176F9282DBCE2EB007B9932 /* Sources */,
+				4176F9292DBCE2EB007B9932 /* Frameworks */,
+				4176F92A2DBCE2EB007B9932 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4176F92E2DBCE2EB007B9932 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				4176F92F2DBCE2EB007B9932 /* NoboruTests */,
+			);
+			name = NoboruTests;
+			packageProductDependencies = (
+			);
+			productName = NoboruTests;
+			productReference = 4176F92C2DBCE2EB007B9932 /* NoboruTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4176F9352DBCE2EB007B9932 /* NoboruUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4176F9462DBCE2EB007B9932 /* Build configuration list for PBXNativeTarget "NoboruUITests" */;
+			buildPhases = (
+				4176F9322DBCE2EB007B9932 /* Sources */,
+				4176F9332DBCE2EB007B9932 /* Frameworks */,
+				4176F9342DBCE2EB007B9932 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4176F9382DBCE2EB007B9932 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				4176F9392DBCE2EB007B9932 /* NoboruUITests */,
+			);
+			name = NoboruUITests;
+			packageProductDependencies = (
+			);
+			productName = NoboruUITests;
+			productReference = 4176F9362DBCE2EB007B9932 /* NoboruUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4176F9172DBCE2EA007B9932 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1630;
+				LastUpgradeCheck = 1630;
+				TargetAttributes = {
+					4176F91E2DBCE2EA007B9932 = {
+						CreatedOnToolsVersion = 16.3;
+					};
+					4176F92B2DBCE2EB007B9932 = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = 4176F91E2DBCE2EA007B9932;
+					};
+					4176F9352DBCE2EB007B9932 = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = 4176F91E2DBCE2EA007B9932;
+					};
+				};
+			};
+			buildConfigurationList = 4176F91A2DBCE2EA007B9932 /* Build configuration list for PBXProject "Noboru" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4176F9162DBCE2EA007B9932;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				4176F9852DBD4606007B9932 /* XCRemoteSwiftPackageReference "Kana" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 4176F9202DBCE2EA007B9932 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4176F91E2DBCE2EA007B9932 /* Noboru */,
+				4176F92B2DBCE2EB007B9932 /* NoboruTests */,
+				4176F9352DBCE2EB007B9932 /* NoboruUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4176F91D2DBCE2EA007B9932 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4176F92A2DBCE2EB007B9932 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4176F9342DBCE2EB007B9932 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4176F91B2DBCE2EA007B9932 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4176F9282DBCE2EB007B9932 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4176F9322DBCE2EB007B9932 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4176F92E2DBCE2EB007B9932 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4176F91E2DBCE2EA007B9932 /* Noboru */;
+			targetProxy = 4176F92D2DBCE2EB007B9932 /* PBXContainerItemProxy */;
+		};
+		4176F9382DBCE2EB007B9932 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4176F91E2DBCE2EA007B9932 /* Noboru */;
+			targetProxy = 4176F9372DBCE2EB007B9932 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		4176F93E2DBCE2EB007B9932 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = EJ3X4MB8HS;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4176F93F2DBCE2EB007B9932 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = EJ3X4MB8HS;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4176F9412DBCE2EB007B9932 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = EJ3X4MB8HS;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nil.app.Noboru;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4176F9422DBCE2EB007B9932 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = EJ3X4MB8HS;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nil.app.Noboru;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4176F9442DBCE2EB007B9932 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = EJ3X4MB8HS;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nil.app.NoboruTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Noboru.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Noboru";
+			};
+			name = Debug;
+		};
+		4176F9452DBCE2EB007B9932 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = EJ3X4MB8HS;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nil.app.NoboruTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Noboru.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Noboru";
+			};
+			name = Release;
+		};
+		4176F9472DBCE2EB007B9932 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = EJ3X4MB8HS;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nil.app.NoboruUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Noboru;
+			};
+			name = Debug;
+		};
+		4176F9482DBCE2EB007B9932 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = EJ3X4MB8HS;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nil.app.NoboruUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Noboru;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4176F91A2DBCE2EA007B9932 /* Build configuration list for PBXProject "Noboru" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4176F93E2DBCE2EB007B9932 /* Debug */,
+				4176F93F2DBCE2EB007B9932 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4176F9402DBCE2EB007B9932 /* Build configuration list for PBXNativeTarget "Noboru" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4176F9412DBCE2EB007B9932 /* Debug */,
+				4176F9422DBCE2EB007B9932 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4176F9432DBCE2EB007B9932 /* Build configuration list for PBXNativeTarget "NoboruTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4176F9442DBCE2EB007B9932 /* Debug */,
+				4176F9452DBCE2EB007B9932 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4176F9462DBCE2EB007B9932 /* Build configuration list for PBXNativeTarget "NoboruUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4176F9472DBCE2EB007B9932 /* Debug */,
+				4176F9482DBCE2EB007B9932 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4176F9852DBD4606007B9932 /* XCRemoteSwiftPackageReference "Kana" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mcvnh/Kana.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4176F9732DBD3D80007B9932 /* NoboruCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NoboruCore;
+		};
+		4176F9862DBD4606007B9932 /* Kana */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4176F9852DBD4606007B9932 /* XCRemoteSwiftPackageReference "Kana" */;
+			productName = Kana;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 4176F9172DBCE2EA007B9932 /* Project object */;
+}

@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "kana",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mcvnh/Kana.git",
+      "state" : {
+        "revision" : "4f179bc1cb9c783b3cf648b565879a95dfde8b79",
+        "version" : "1.1.0"
+      }
+    }
+  ],
+  "version" : 2
+}

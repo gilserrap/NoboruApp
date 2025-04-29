@@ -1,0 +1,542 @@
+[
+  {
+    "id": "5a70372f-f6a1-45af-83b7-5fe4e14a675f",
+    "romaji": "noboru",
+    "hiragana": "のぼる",
+    "katakana": "ノボル",
+    "meaning": "to climb",
+    "correctScript": "hiragana",
+    "category": "action"
+  },
+  {
+    "id": "84c5b1ce-1361-4a6e-9015-0c78a851b073",
+    "romaji": "tozan",
+    "hiragana": "とざん",
+    "katakana": "トザン",
+    "meaning": "mountaineering",
+    "correctScript": "hiragana",
+    "category": "action"
+  },
+  {
+    "id": "29f2864d-bf64-4fda-acc5-97f1af29f964",
+    "romaji": "bōdaringu",
+    "hiragana": "ぼうだりんぐ",
+    "katakana": "ボルダリング",
+    "meaning": "bouldering",
+    "correctScript": "hiragana",
+    "category": "action"
+  },
+  {
+    "id": "bad98780-e057-4738-a16c-4c9db763e1de",
+    "romaji": "kuraimingu",
+    "hiragana": "くらいみんぐ",
+    "katakana": "クライミング",
+    "meaning": "climbing",
+    "correctScript": "hiragana",
+    "category": "action"
+  },
+  {
+    "id": "8e455071-ffb9-4d96-b8c4-6f1d52061df5",
+    "romaji": "torēningu",
+    "hiragana": "とれーにんぐ",
+    "katakana": "トレーニング",
+    "meaning": "training",
+    "correctScript": "hiragana",
+    "category": "action"
+  },
+  {
+    "id": "221cde20-aa0a-400e-80a6-865233b02809",
+    "romaji": "watari",
+    "hiragana": "わたり",
+    "katakana": "ワタリ",
+    "meaning": "traverse",
+    "correctScript": "hiragana",
+    "category": "action"
+  },
+  {
+    "id": "0119d697-a013-4e00-a822-f637353c1600",
+    "romaji": "kakunin",
+    "hiragana": "かくにん",
+    "katakana": "カクニン",
+    "meaning": "confirmation",
+    "correctScript": "hiragana",
+    "category": "action"
+  },
+  {
+    "id": "4e22fcf4-5f28-4945-a2dc-d585914ea85a",
+    "romaji": "sutāto",
+    "hiragana": "すたーと",
+    "katakana": "スタート",
+    "meaning": "start",
+    "correctScript": "hiragana",
+    "category": "action"
+  },
+  {
+    "id": "451ddf82-2ea3-4852-8180-2e11b3595003",
+    "romaji": "gōru",
+    "hiragana": "ごーる",
+    "katakana": "ゴール",
+    "meaning": "goal",
+    "correctScript": "hiragana",
+    "category": "action"
+  },
+  {
+    "id": "f026d599-1396-47b1-8e61-74ffde161561",
+    "romaji": "kirikae",
+    "hiragana": "きりかえ",
+    "katakana": "キリカエ",
+    "meaning": "switch/changeover",
+    "correctScript": "hiragana",
+    "category": "action"
+  },
+  {
+    "id": "66bac038-a913-48a1-81dd-052e21965f1d",
+    "romaji": "agatte",
+    "hiragana": "あがって",
+    "katakana": "アガッテ",
+    "meaning": "go up",
+    "correctScript": "hiragana",
+    "category": "action"
+  },
+  {
+    "id": "01f0f829-3e89-443e-97d0-f03ad7e1564f",
+    "romaji": "sagatte",
+    "hiragana": "さがって",
+    "katakana": "サガッテ",
+    "meaning": "go down",
+    "correctScript": "hiragana",
+    "category": "action"
+  },
+  {
+    "id": "3087282b-afd6-4366-8791-3915fe642093",
+    "romaji": "girippu",
+    "hiragana": "ぐりっぷ",
+    "katakana": "グリップ",
+    "meaning": "grip",
+    "correctScript": "hiragana",
+    "category": "hold"
+  },
+  {
+    "id": "8d89351d-e0c9-4bd9-8910-891612a800f7",
+    "romaji": "horudo",
+    "hiragana": "ほるど",
+    "katakana": "ホールド",
+    "meaning": "hold",
+    "correctScript": "hiragana",
+    "category": "hold"
+  },
+  {
+    "id": "e71089ad-db94-419b-a24b-6cd3376fd8b2",
+    "romaji": "jagu",
+    "hiragana": "じゃぐ",
+    "katakana": "ジャグ",
+    "meaning": "jug",
+    "correctScript": "hiragana",
+    "category": "hold"
+  },
+  {
+    "id": "87b84610-c0ad-4d2c-b807-ec1c1214f05d",
+    "romaji": "kurimpazu",
+    "hiragana": "くりんぱず",
+    "katakana": "クリンパーズ",
+    "meaning": "crimpers",
+    "correctScript": "hiragana",
+    "category": "hold"
+  },
+  {
+    "id": "739aa05a-4c14-46bb-989d-73293d550a60",
+    "romaji": "retto",
+    "hiragana": "れっと",
+    "katakana": "レット",
+    "meaning": "ledge",
+    "correctScript": "hiragana",
+    "category": "hold"
+  },
+  {
+    "id": "ab4c4a53-d70e-4cfb-bb41-03b12cfc42b3",
+    "romaji": "pokketo",
+    "hiragana": "ぽっけと",
+    "katakana": "ポッケト",
+    "meaning": "pocket",
+    "correctScript": "hiragana",
+    "category": "hold"
+  },
+  {
+    "id": "d36abde5-4680-4519-86ed-9813bad4eedc",
+    "romaji": "pinchi",
+    "hiragana": "ぴんち",
+    "katakana": "ピンチ",
+    "meaning": "pinch",
+    "correctScript": "hiragana",
+    "category": "hold"
+  },
+  {
+    "id": "04b4a4dd-d68a-4566-a4ff-1b25680cab4b",
+    "romaji": "suroparu",
+    "hiragana": "すろぱる",
+    "katakana": "スロパール",
+    "meaning": "sloper",
+    "correctScript": "hiragana",
+    "category": "hold"
+  },
+  {
+    "id": "335c38bf-5d8c-4c70-b9b6-e6d6c235e401",
+    "romaji": "underkurinku",
+    "hiragana": "あんだーくりんく",
+    "katakana": "アンダークリンク",
+    "meaning": "undercling",
+    "correctScript": "hiragana",
+    "category": "hold"
+  },
+  {
+    "id": "f5dd7715-b8ab-4acb-b685-8801b6859dab",
+    "romaji": "gasshu",
+    "hiragana": "がっしゅ",
+    "katakana": "ガッシュ",
+    "meaning": "gastone",
+    "correctScript": "hiragana",
+    "category": "hold"
+  },
+  {
+    "id": "d5f27842-bae7-4496-9d86-bb549a64861f",
+    "romaji": "volume",
+    "hiragana": "ぼりゅーむ",
+    "katakana": "ボリューム",
+    "meaning": "volume",
+    "correctScript": "hiragana",
+    "category": "hold"
+  },
+  {
+    "id": "b0f4fa36-4a09-4046-b646-7343df2310e7",
+    "romaji": "edge",
+    "hiragana": "えっじ",
+    "katakana": "エッジ",
+    "meaning": "edge",
+    "correctScript": "hiragana",
+    "category": "hold"
+  },
+  {
+    "id": "921e3094-141d-4094-8542-9e34df25c7c6",
+    "romaji": "harunesu",
+    "hiragana": "はるねす",
+    "katakana": "ハーネス",
+    "meaning": "harness",
+    "correctScript": "hiragana",
+    "category": "gear"
+  },
+  {
+    "id": "794e179e-db36-4ebd-9385-f8e0393f1c64",
+    "romaji": "roppu",
+    "hiragana": "ろっぷ",
+    "katakana": "ロープ",
+    "meaning": "rope",
+    "correctScript": "hiragana",
+    "category": "gear"
+  },
+  {
+    "id": "6b987aad-8bd2-460e-989f-61602e5ee15f",
+    "romaji": "tenugui",
+    "hiragana": "てぬぐい",
+    "katakana": "テヌグイ",
+    "meaning": "hand towel",
+    "correctScript": "hiragana",
+    "category": "gear"
+  },
+  {
+    "id": "46c8ae65-540c-4826-824f-5986403aebdc",
+    "romaji": "kuraimingu shuuzu",
+    "hiragana": "くらいみんぐしゅーず",
+    "katakana": "クライミングシューズ",
+    "meaning": "climbing shoes",
+    "correctScript": "hiragana",
+    "category": "gear"
+  },
+  {
+    "id": "b606cdda-f35e-492b-830c-441977de25a9",
+    "romaji": "chakku",
+    "hiragana": "ちゃっく",
+    "katakana": "チャック",
+    "meaning": "chalk",
+    "correctScript": "hiragana",
+    "category": "gear"
+  },
+  {
+    "id": "33627425-5508-4cbc-8a4c-068dbb5da634",
+    "romaji": "beruto",
+    "hiragana": "べると",
+    "katakana": "ベルト",
+    "meaning": "belt",
+    "correctScript": "hiragana",
+    "category": "gear"
+  },
+  {
+    "id": "6e551755-7d7a-445e-a9b3-f20547fbdc03",
+    "romaji": "bakku",
+    "hiragana": "ばっく",
+    "katakana": "バック",
+    "meaning": "backpack",
+    "correctScript": "hiragana",
+    "category": "gear"
+  },
+  {
+    "id": "de83176f-4fec-4bc6-8e5d-1e33a398d69f",
+    "romaji": "kabuto",
+    "hiragana": "かぶと",
+    "katakana": "カブト",
+    "meaning": "helmet",
+    "correctScript": "hiragana",
+    "category": "gear"
+  },
+  {
+    "id": "688a182a-b93e-4d9a-a3d5-0c106ae8264d",
+    "romaji": "kaaten",
+    "hiragana": "かーてん",
+    "katakana": "カーテン",
+    "meaning": "carabiner",
+    "correctScript": "hiragana",
+    "category": "gear"
+  },
+  {
+    "id": "072b79df-5f97-4a3c-b3c1-bab507c77c8f",
+    "romaji": "zubon",
+    "hiragana": "ずぼん",
+    "katakana": "ズボン",
+    "meaning": "pants",
+    "correctScript": "hiragana",
+    "category": "gear"
+  },
+  {
+    "id": "b5476c8f-bda6-40b6-baeb-d69f0ed33d0e",
+    "romaji": "yōi",
+    "hiragana": "ようい",
+    "katakana": "ヨウイ",
+    "meaning": "preparation",
+    "correctScript": "hiragana",
+    "category": "gear"
+  },
+  {
+    "id": "399c5d10-c8be-4d11-8988-8bdb9cae1788",
+    "romaji": "sefu",
+    "hiragana": "せふ",
+    "katakana": "セフ",
+    "meaning": "safe",
+    "correctScript": "hiragana",
+    "category": "gear"
+  },
+  {
+    "id": "dee5e94d-db3e-4ac7-9a22-0191781fce53",
+    "romaji": "muzukashii",
+    "hiragana": "むずかしい",
+    "katakana": "ムズカシイ",
+    "meaning": "too difficult",
+    "correctScript": "hiragana",
+    "category": "excuse"
+  },
+  {
+    "id": "0a8e11f5-4480-418a-a2ff-09292f08f53a",
+    "romaji": "te ga suberu",
+    "hiragana": "てがすべる",
+    "katakana": "テガスベル",
+    "meaning": "my hands are slippery",
+    "correctScript": "hiragana",
+    "category": "excuse"
+  },
+  {
+    "id": "d3b2bc48-0cfa-4da1-ade1-68082a42d58f",
+    "romaji": "ho-rudo ga yogoreteiru",
+    "hiragana": "ほーるどがよごれている",
+    "katakana": "ホールドガヨゴレテイル",
+    "meaning": "the holds are dirty",
+    "correctScript": "hiragana",
+    "category": "excuse"
+  },
+  {
+    "id": "37b124bd-5a66-4f78-9cb3-74ea3c59b5f4",
+    "romaji": "se ga mijikai",
+    "hiragana": "せがみじかい",
+    "katakana": "セガミジカイ",
+    "meaning": "I am too short",
+    "correctScript": "hiragana",
+    "category": "excuse"
+  },
+  {
+    "id": "f9583439-28f5-4004-a736-2a2cf933ca40",
+    "romaji": "kono katachi muri",
+    "hiragana": "このかたちむり",
+    "katakana": "コノカタチムリ",
+    "meaning": "this move is impossible",
+    "correctScript": "hiragana",
+    "category": "excuse"
+  },
+  {
+    "id": "59649232-df4f-4de0-98c0-e41c87b7529e",
+    "romaji": "kyou wa dame da",
+    "hiragana": "きょうはだめだ",
+    "katakana": "キョウハダメダ",
+    "meaning": "today’s just not my day",
+    "correctScript": "hiragana",
+    "category": "excuse"
+  },
+  {
+    "id": "dc595409-da16-421a-8bcc-399ccc6846b1",
+    "romaji": "tsukareta",
+    "hiragana": "つかれた",
+    "katakana": "ツカレタ",
+    "meaning": "I'm tired",
+    "correctScript": "hiragana",
+    "category": "excuse"
+  },
+  {
+    "id": "9036dcf2-5160-4bad-9ba1-69eaa4b100bb",
+    "romaji": "ase ga sugoku deru",
+    "hiragana": "あせがすごくでる",
+    "katakana": "アセガスゴクデル",
+    "meaning": "I'm sweating a lot",
+    "correctScript": "hiragana",
+    "category": "excuse"
+  },
+  {
+    "id": "ff70c6aa-b66b-49e3-b3e9-18302765ca6b",
+    "romaji": "ashi ga todokanai",
+    "hiragana": "あしがとどかない",
+    "katakana": "アシガトドカナイ",
+    "meaning": "my foot can't reach",
+    "correctScript": "hiragana",
+    "category": "excuse"
+  },
+  {
+    "id": "050a6b96-86d7-4952-ac1e-3c0f20166b9a",
+    "romaji": "kowai",
+    "hiragana": "こわい",
+    "katakana": "コワイ",
+    "meaning": "it's scary",
+    "correctScript": "hiragana",
+    "category": "excuse"
+  },
+  {
+    "id": "8a5af949-2c6b-45f4-88b5-31fa25a93351",
+    "romaji": "atama ga itai",
+    "hiragana": "あたまがいたい",
+    "katakana": "アタマガイタイ",
+    "meaning": "I have a headache",
+    "correctScript": "hiragana",
+    "category": "excuse"
+  },
+  {
+    "id": "0234efeb-9fe3-4d7e-9d71-ce07153afb33",
+    "romaji": "kaze wo hiita",
+    "hiragana": "かぜをひいた",
+    "katakana": "カゼヲヒイタ",
+    "meaning": "I caught a cold",
+    "correctScript": "hiragana",
+    "category": "excuse"
+  },
+  {
+    "id": "7186b663-87bd-49d6-b7af-de4ed91383fb",
+    "romaji": "yama",
+    "hiragana": "やま",
+    "katakana": "ヤマ",
+    "meaning": "mountain",
+    "correctScript": "hiragana",
+    "category": "location"
+  },
+  {
+    "id": "38a91910-7c41-4830-a17a-259b35c4ea06",
+    "romaji": "taki",
+    "hiragana": "たき",
+    "katakana": "タキ",
+    "meaning": "waterfall",
+    "correctScript": "hiragana",
+    "category": "location"
+  },
+  {
+    "id": "ae0867da-5105-4a81-af79-a95bd62b4724",
+    "romaji": "sentā",
+    "hiragana": "せんたー",
+    "katakana": "センター",
+    "meaning": "center (gym)",
+    "correctScript": "hiragana",
+    "category": "location"
+  },
+  {
+    "id": "a67a66bf-f87b-4c9c-943e-e0dafb411baa",
+    "romaji": "kabe",
+    "hiragana": "かべ",
+    "katakana": "カベ",
+    "meaning": "wall",
+    "correctScript": "hiragana",
+    "category": "location"
+  },
+  {
+    "id": "31814946-ac84-437a-91c1-2c6107154ce5",
+    "romaji": "nouten",
+    "hiragana": "のうてん",
+    "katakana": "ノウテン",
+    "meaning": "summit/top",
+    "correctScript": "hiragana",
+    "category": "location"
+  },
+  {
+    "id": "bafa211e-be74-4ff7-96f3-90596e1d6a7e",
+    "romaji": "gake",
+    "hiragana": "がけ",
+    "katakana": "ガケ",
+    "meaning": "cliff",
+    "correctScript": "hiragana",
+    "category": "location"
+  },
+  {
+    "id": "fba0761e-7a4a-4ea4-9796-d40a92c76bac",
+    "romaji": "danmen",
+    "hiragana": "だんめん",
+    "katakana": "ダンメン",
+    "meaning": "cross-section",
+    "correctScript": "hiragana",
+    "category": "location"
+  },
+  {
+    "id": "8b172f63-dbba-4d1e-bf1a-d155d14bc69b",
+    "romaji": "iwa",
+    "hiragana": "いわ",
+    "katakana": "イワ",
+    "meaning": "rock",
+    "correctScript": "hiragana",
+    "category": "location"
+  },
+  {
+    "id": "960d2ef1-762f-4b1d-82ee-af811994c67d",
+    "romaji": "ishiyama",
+    "hiragana": "いしやま",
+    "katakana": "イシヤマ",
+    "meaning": "rocky mountain",
+    "correctScript": "hiragana",
+    "category": "location"
+  },
+  {
+    "id": "7bf3a989-56c9-4053-b917-1bacec054d83",
+    "romaji": "dōkutsu",
+    "hiragana": "どうくつ",
+    "katakana": "ドウクツ",
+    "meaning": "cave",
+    "correctScript": "hiragana",
+    "category": "location"
+  },
+  {
+    "id": "6d02805b-9310-483d-b928-6ca0dd323728",
+    "romaji": "santō",
+    "hiragana": "さんとう",
+    "katakana": "サントウ",
+    "meaning": "peak",
+    "correctScript": "hiragana",
+    "category": "location"
+  },
+  {
+    "id": "acb14db4-26fa-441e-832e-43bf317b4c99",
+    "romaji": "tanima",
+    "hiragana": "たにま",
+    "katakana": "タニマ",
+    "meaning": "valley",
+    "correctScript": "hiragana",
+    "category": "location"
+  }
+]
