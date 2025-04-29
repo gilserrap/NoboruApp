@@ -34,22 +34,6 @@ public final class QuizViewModel: ObservableObject {
         self.questions = QuizService().generateQuiz(with: settings)
     }
 
-    private static func selectKana(for word: Word, basedOn script: QuizScriptOption) -> String {
-        switch script {
-        case .hiragana:
-            return word.hiragana
-        case .katakana:
-            return word.katakana
-        case .correct:
-            switch word.correctScript {
-            case .hiragana:
-                return word.hiragana
-            case .katakana:
-                return word.katakana
-            }
-        }
-    }
-
     public func handleMultipleChoiceAnswer(_ index: Int) {
         selectedAnswerIndex = index
         showAnswerResult = true
