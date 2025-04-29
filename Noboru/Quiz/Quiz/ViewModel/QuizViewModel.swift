@@ -6,23 +6,26 @@ import NoboruCore
 public final class QuizViewModel: ObservableObject {
     public let settings: QuizSettings
     private let quizService: QuizService
-    public private(set) var quizSummary = QuizSummary(correct: 0, incorrect: 0)
 
-    @Published public private(set) var questions: [QuizQuestion] = []
-    @Published public private(set) var currentQuestionIndex: Int = 0
-    @Published public var selectedAnswerIndex: Int? = nil
-    @Published public var userInput: String = ""
-    @Published public var showAnswerResult: Bool = false
-    @Published public var isAnswerCorrect: Bool = false
-    @Published public var finished: Bool = false
+    public struct State {
+        public var questions: [QuizQuestion] = []
+        public var currentQuestionIndex: Int = 0
+        public var selectedAnswerIndex: Int? = nil
+        public var userInput: String = ""
+        public var showAnswerResult: Bool = false
+        public var isAnswerCorrect: Bool = false
+        public var finished: Bool = false
+        public var quizSummary = QuizSummary(correct: 0, incorrect: 0)
 
-    public var currentQuestion: QuizQuestion {
-        questions[currentQuestionIndex]
+        public var currentQuestion: QuizQuestion {
+            questions[currentQuestionIndex]
+        }
+        public var displayedQuestion: String {
+            currentQuestion.kanaText
+        }
     }
 
-    public var displayedQuestion: String {
-        currentQuestion.kanaText
-    }
+    @Published public var state: State = .init()
 
     public init(settings: QuizSettings, quizService: QuizService = QuizService()) {
         self.settings = settings
@@ -30,36 +33,42 @@ public final class QuizViewModel: ObservableObject {
         loadQuestions()
     }
 
+    internal init(model: State, settings: QuizSettings, quizService: QuizService = QuizService()) {
+        self.settings = settings
+        self.quizService = quizService
+        self.state = model
+    }
+
     private func loadQuestions() {
-        self.questions = QuizService().generateQuiz(with: settings)
+        state.questions = QuizService().generateQuiz(with: settings)
     }
 
     public func handleMultipleChoiceAnswer(_ index: Int) {
-        selectedAnswerIndex = index
-        showAnswerResult = true
-        isAnswerCorrect = (index == currentQuestion.options?.firstIndex(of: currentQuestion.correctAnswer) ?? -1)
-        if isAnswerCorrect {
-            quizSummary.correct += 1
+        state.selectedAnswerIndex = index
+        state.showAnswerResult = true
+        state.isAnswerCorrect = (index == state.currentQuestion.options?.firstIndex(of: state.currentQuestion.correctAnswer) ?? -1)
+        if state.isAnswerCorrect {
+            state.quizSummary.correct += 1
         } else {
-            quizSummary.incorrect += 1
+            state.quizSummary.incorrect += 1
         }
     }
 
     public func handleFreeInputAnswer() {
-        showAnswerResult = true
-        isAnswerCorrect = userInput.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() ==
-                          currentQuestion.correctAnswer.lowercased()
+        state.isAnswerCorrect =
+            state.userInput.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() ==
+            state.currentQuestion.correctAnswer.lowercased()
     }
 
     public func goToNextQuestion() {
-        if currentQuestionIndex < questions.count - 1 {
-            currentQuestionIndex += 1
-            selectedAnswerIndex = nil
-            userInput = ""
-            showAnswerResult = false
-            isAnswerCorrect = false
+        if state.currentQuestionIndex < state.questions.count - 1 {
+            state.currentQuestionIndex += 1
+            state.selectedAnswerIndex = nil
+            state.userInput = ""
+            state.showAnswerResult = false
+            state.isAnswerCorrect = false
         } else {
-            finished = true
+            state.finished = true
         }
     }
 }

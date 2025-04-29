@@ -6,6 +6,10 @@ struct QuizView: View {
     @Environment(\.dismiss) private var dismiss
     @StateObject private var viewModel: QuizViewModel
 
+    private var state: QuizViewModel.State {
+        viewModel.state
+    }
+
     init(settings: QuizSettings) {
         _viewModel = StateObject(wrappedValue: QuizViewModel(settings: settings))
     }
@@ -16,10 +20,10 @@ struct QuizView: View {
 
     var body: some View {
         VStack(spacing: 24) {
-            if viewModel.finished {
-                QuizSummaryView(summary: viewModel.quizSummary)
+            if state.finished {
+                QuizSummaryView(summary: state.quizSummary)
                 finishButton
-            } else if viewModel.currentQuestionIndex < viewModel.questions.count {
+            } else if state.currentQuestionIndex < state.questions.count {
                 progressSection
                 Spacer()
                 questionSection
@@ -51,9 +55,9 @@ struct QuizView: View {
                 .foregroundColor(.white)
                 .cornerRadius(Values.Button.cornerRadius)
         }
-        .animation(.easeInOut(duration: Values.Button.animationDuration), value: viewModel.showAnswerResult)
-        .opacity(viewModel.showAnswerResult ? 1 : 0)
-        .disabled(!viewModel.showAnswerResult)
+        .animation(.easeInOut(duration: Values.Button.animationDuration), value: state.showAnswerResult)
+        .opacity(state.showAnswerResult ? 1 : 0)
+        .disabled(!state.showAnswerResult)
     }
 
     private var finishButton: some View {
@@ -73,13 +77,13 @@ struct QuizView: View {
     // MARK: - Sections
 
     private var progressSection: some View {
-        Text("Question \(viewModel.currentQuestionIndex + 1) of \(viewModel.questions.count)")
+        Text("Question \(state.currentQuestionIndex + 1) of \(state.questions.count)")
             .font(Values.Font.progress)
             .foregroundColor(.secondary)
     }
 
     private var questionSection: some View {
-        let kanaCharacters = viewModel.currentQuestion.kanaText.map(String.init)
+        let kanaCharacters = state.currentQuestion.kanaText.map(String.init)
         return HStack(spacing: 16) {
             ForEach(0..<kanaCharacters.count, id: \.self) { index in
                 VStack(spacing: 8) {
@@ -108,30 +112,30 @@ struct QuizView: View {
 
     private var multipleChoiceSection: some View {
         VStack(spacing: 16) {
-            ForEach(0..<(viewModel.currentQuestion.options?.count ?? 0), id: \.self) { index in
+            ForEach(0..<(state.currentQuestion.options?.count ?? 0), id: \.self) { index in
                 Button(action: {
                     viewModel.handleMultipleChoiceAnswer(index)
                 }) {
-                    Text(viewModel.currentQuestion.options?[index] ?? "")
+                    Text(state.currentQuestion.options?[index] ?? "")
                         .frame(maxWidth: .infinity)
                         .padding()
                         .background(buttonBackground(for: index))
                         .foregroundColor(.primary)
                         .cornerRadius(Values.Button.cornerRadius)
                 }
-                .disabled(viewModel.showAnswerResult)
+                .disabled(state.showAnswerResult)
             }
         }
     }
 
     private func buttonBackground(for index: Int) -> Color {
-        guard viewModel.showAnswerResult else {
+        guard state.showAnswerResult else {
             return Values.Color.neutral
         }
 
-        if index == viewModel.currentQuestion.options?.firstIndex(of: viewModel.currentQuestion.correctAnswer) {
+        if index == state.currentQuestion.options?.firstIndex(of: state.currentQuestion.correctAnswer) {
             return Values.Color.correct
-        } else if index == viewModel.selectedAnswerIndex {
+        } else if index == state.selectedAnswerIndex {
             return Values.Color.incorrect
         } else {
             return Values.Color.neutral
@@ -140,7 +144,7 @@ struct QuizView: View {
 
     private var freeInputSection: some View {
         VStack(spacing: 16) {
-            TextField("Type your answer", text: $viewModel.userInput)
+            TextField("Type your answer", text: $viewModel.state.userInput)
                 .textFieldStyle(.roundedBorder)
                 .padding()
 
@@ -155,7 +159,7 @@ struct QuizView: View {
                     .foregroundColor(.white)
                     .cornerRadius(Values.Button.cornerRadius)
             }
-            .disabled(viewModel.showAnswerResult || viewModel.userInput.isEmpty)
+            .disabled(state.showAnswerResult || state.userInput.isEmpty)
         }
     }
 
@@ -187,23 +191,44 @@ struct QuizView: View {
 
 
 #Preview("Multiple Choice Mode") {
-    NavigationStack {
-        QuizView(settings: QuizSettings(
-            script: .hiragana,
-            category: .hold,
-            mode: .multipleChoice,
-            showRomaji: true
-        ))
-    }
+    QuizView(settings: QuizSettings(
+        script: .hiragana,
+        category: .hold,
+        mode: .multipleChoice,
+        showRomaji: true
+    ))
 }
 
 #Preview("Free Input Mode") {
-    NavigationStack {
-        QuizView(settings: QuizSettings(
-            script: .katakana,
-            category: .action,
-            mode: .freeInput,
-            showRomaji: false
-        ))
-    }
+    QuizView(settings: QuizSettings(
+        script: .katakana,
+        category: .action,
+        mode: .freeInput,
+        showRomaji: false
+    ))
+}
+#Preview("Finished Quiz") {
+    QuizView(
+        viewModel: QuizViewModel(
+            model: .init(
+                questions: [],
+                currentQuestionIndex: 0,
+                selectedAnswerIndex: 0,
+                userInput: "",
+                showAnswerResult: false,
+                isAnswerCorrect: false,
+                finished: true,
+                quizSummary: QuizSummary(
+                    correct: 7,
+                    incorrect: 3
+                )
+            ),
+            settings: QuizSettings(
+                script: .katakana,
+                category: .action,
+                mode: .freeInput,
+                showRomaji: false
+            )
+        )
+    )
 }
