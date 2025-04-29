@@ -5,7 +5,7 @@ import NoboruCore
 @MainActor
 public final class QuizViewModel: ObservableObject {
     public let settings: QuizSettings
-    private let wordService: WordService
+    private let quizService: QuizService
     public private(set) var quizSummary = QuizSummary(correct: 0, incorrect: 0)
 
     @Published public private(set) var questions: [QuizQuestion] = []
@@ -24,25 +24,14 @@ public final class QuizViewModel: ObservableObject {
         currentQuestion.kanaText
     }
 
-    public init(settings: QuizSettings, wordService: WordService = WordService()) {
+    public init(settings: QuizSettings, quizService: QuizService = QuizService()) {
         self.settings = settings
-        self.wordService = wordService
+        self.quizService = quizService
         loadQuestions()
     }
 
     private func loadQuestions() {
-        let allWords = wordService.getWords(for: settings.category)
-        let shuffled = allWords.shuffled()
-        let selectedWords = Array(shuffled.prefix(10))
-
-        self.questions = selectedWords.map { word in
-            QuizQuestion(
-                kanaText: Self.selectKana(for: word, basedOn: settings.script),
-                sourceScript: word.correctScript.toScriptOption(),
-                correctAnswer: word.meaning,
-                options: settings.mode == .multipleChoice ? wordService.generateOptions(correctWord: word, category: settings.category) : nil
-            )
-        }
+        self.questions = QuizService().generateQuiz(with: settings)
     }
 
     private static func selectKana(for word: Word, basedOn script: QuizScriptOption) -> String {

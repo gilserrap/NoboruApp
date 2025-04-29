@@ -76,9 +76,8 @@ final class QuizServiceTests: XCTestCase {
             showRomaji: true
         )
 
-        let quiz = quizService.generateQuiz(with: settings)
-        XCTAssertLessThanOrEqual(quiz.questions.count, 10)
-        XCTAssertEqual(quiz.settings, settings)
+        let questions = quizService.generateQuiz(with: settings)
+        XCTAssertLessThanOrEqual(questions.count, 10)
     }
 
     func testAllQuestionsMatchCategory() {
@@ -89,12 +88,12 @@ final class QuizServiceTests: XCTestCase {
             showRomaji: false
         )
 
-        let quiz = quizService.generateQuiz(with: settings)
+        let questions = quizService.generateQuiz(with: settings)
         let expectedMeanings = mockWords
             .filter { $0.category == .action }
             .map(\.meaning)
 
-        for question in quiz.questions {
+        for question in questions {
             XCTAssertTrue(expectedMeanings.contains(question.correctAnswer))
         }
     }
@@ -107,12 +106,12 @@ final class QuizServiceTests: XCTestCase {
             showRomaji: false
         )
 
-        let quiz = quizService.generateQuiz(with: settings)
+        let questions = quizService.generateQuiz(with: settings)
         let expectedKatakana = mockWords
             .filter { $0.category == .hold }
             .map(\.katakana)
 
-        for question in quiz.questions {
+        for question in questions {
             XCTAssertTrue(expectedKatakana.contains(question.kanaText),
                           "Unexpected kana: \(question.kanaText)")
         }
@@ -126,9 +125,9 @@ final class QuizServiceTests: XCTestCase {
             showRomaji: false
         )
 
-        let quiz = quizService.generateQuiz(with: settings)
+        let questions = quizService.generateQuiz(with: settings)
 
-        for question in quiz.questions {
+        for question in questions {
             XCTAssertNotNil(question.options)
             XCTAssertTrue(question.options!.contains(question.correctAnswer))
         }
@@ -142,9 +141,9 @@ final class QuizServiceTests: XCTestCase {
             showRomaji: false
         )
 
-        let quiz = quizService.generateQuiz(with: settings)
+        let questions = quizService.generateQuiz(with: settings)
 
-        for question in quiz.questions {
+        for question in questions {
             let options = question.options ?? []
             let uniqueOptions = Set(options)
             XCTAssertEqual(options.count, uniqueOptions.count,

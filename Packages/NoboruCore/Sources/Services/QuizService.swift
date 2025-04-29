@@ -7,7 +7,7 @@ public final class QuizService {
         self.wordService = wordService
     }
 
-    public func generateQuiz(with settings: QuizSettings) -> Quiz {
+    public func generateQuiz(with settings: QuizSettings) -> [QuizQuestion] {
         let words = wordService.getWords(for: settings.category).shuffled().prefix(10)
 
         let questions = words.map { word in
@@ -22,7 +22,7 @@ public final class QuizService {
             )
         }
 
-        return Quiz(settings: settings, questions: Array(questions))
+        return questions
     }
 
     private static func selectKana(for word: Word, basedOn script: QuizScriptOption) -> String {
