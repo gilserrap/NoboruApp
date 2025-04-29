@@ -3,7 +3,6 @@ import Foundation
 public enum ScriptType: String, Codable {
     case hiragana
     case katakana
-    case correct
 }
 
 extension ScriptType {
@@ -13,8 +12,6 @@ extension ScriptType {
             return .hiragana
         case .katakana:
             return .katakana
-        case .correct:
-            return .correct
         }
     }
 }

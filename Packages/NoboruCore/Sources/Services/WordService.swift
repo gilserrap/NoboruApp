@@ -1,6 +1,11 @@
 import Foundation
 
-public final class WordService {
+public protocol WordServiceable {
+    func getWords(for category: WordCategory) -> [Word]
+    func generateOptions(correctWord: Word, category: WordCategory) -> [String]
+}
+
+public final class WordService: WordServiceable {
     private struct JSON {
         static let wordList = "nonboru_full_wordlist"
     }

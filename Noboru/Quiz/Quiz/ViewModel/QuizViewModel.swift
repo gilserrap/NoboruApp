@@ -57,8 +57,6 @@ public final class QuizViewModel: ObservableObject {
                 return word.hiragana
             case .katakana:
                 return word.katakana
-            case .correct:
-                return word.hiragana
             }
         }
     }
