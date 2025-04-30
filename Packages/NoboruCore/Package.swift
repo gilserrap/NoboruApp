@@ -12,18 +12,25 @@ let package = Package(
             targets: ["NoboruCore"]
         )
     ],
-    dependencies: [],
+    dependencies: [
+        .package(url: "https://github.com/AdevintaSpain/SwiftAdditions.git", .upToNextMajor(from: "1.0.0")),
+    ],
     targets: [
         .target(
             name: "NoboruCore",
-            dependencies: [],
+            dependencies: [
+                .product(name: "Additions", package: "SwiftAdditions"),
+            ],
             resources: [
                 .process("Resources")
             ]
         ),
         .testTarget(
             name: "NoboruCoreTests",
-            dependencies: ["NoboruCore"]
+            dependencies: [
+                "NoboruCore",
+                .product(name: "Additions", package: "SwiftAdditions"),
+            ]
         )
     ]
 )

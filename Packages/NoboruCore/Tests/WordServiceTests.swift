@@ -3,7 +3,7 @@ import XCTest
 
 final class WordServiceTests: XCTestCase {
     func testLoadLocalWords() {
-        let words = WordService.loadLocalWords()
+        let words = WordService().getAllWords()
         XCTAssertFalse(words.isEmpty, "Expected non-empty word list.")
     }
 }

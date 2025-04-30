@@ -1,9 +1,12 @@
 import SwiftUI
+import Additions
 import NoboruCore
 
 struct CategoryListView: View {
+
     @StateObject private var viewModel = CategoryListViewModel()
     @State var quizStarted: Bool = false
+
     var body: some View {
         List(WordCategory.allCases, id: \.self) { category in
             NavigationLink(destination: WordListView(category: category, words: viewModel.words(for: category))) {
@@ -41,4 +44,11 @@ struct CategoryListView: View {
             return Text("🗻")
         }
     }
+}
+
+#Preview {
+    CategoryListView()
+        .injecting {
+            Register(WordServiceable.self) { WordService() }
+        }
 }

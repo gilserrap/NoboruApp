@@ -1,11 +1,15 @@
 import Foundation
+import Additions
 
-public final class QuizService {
-    private let wordService: WordServiceable
+public protocol QuizServiceable {
+    func generateQuiz(with settings: QuizSettings) -> [QuizQuestion]
+}
 
-    public init(wordService: WordServiceable = WordService()) {
-        self.wordService = wordService
-    }
+public final class QuizService: QuizServiceable {
+
+    @Inject private var wordService: WordServiceable
+
+    public init() {}
 
     public func generateQuiz(with settings: QuizSettings) -> [QuizQuestion] {
         let words = wordService.getWords(for: settings.category).shuffled().prefix(10)

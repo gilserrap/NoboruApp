@@ -1,11 +1,12 @@
-import Foundation
 import SwiftUI
+import Additions
+import Foundation
 import NoboruCore
 
 @MainActor
 public final class QuizViewModel: ObservableObject {
     public let settings: QuizSettings
-    private let quizService: QuizService
+    @Inject private var quizService: QuizServiceable
 
     public struct State {
         public var questions: [QuizQuestion] = []
@@ -27,20 +28,18 @@ public final class QuizViewModel: ObservableObject {
 
     @Published public var state: State = .init()
 
-    public init(settings: QuizSettings, quizService: QuizService = QuizService()) {
+    public init(settings: QuizSettings) {
         self.settings = settings
-        self.quizService = quizService
         loadQuestions()
     }
 
-    internal init(model: State, settings: QuizSettings, quizService: QuizService = QuizService()) {
+    internal init(model: State, settings: QuizSettings) {
         self.settings = settings
-        self.quizService = quizService
         self.state = model
     }
 
     private func loadQuestions() {
-        state.questions = QuizService().generateQuiz(with: settings)
+        state.questions = quizService.generateQuiz(with: settings)
     }
 
     public func handleMultipleChoiceAnswer(_ index: Int) {

@@ -1,12 +1,18 @@
 import Foundation
 import XCTest
+import Additions
 @testable import NoboruCore
 
 final class MockWordService: WordServiceable {
+    
     private let mockWords: [Word]
 
     public init(mockWords: [Word]) {
         self.mockWords = mockWords
+    }
+
+    func getAllWords() -> [NoboruCore.Word] {
+        mockWords
     }
 
     public func getWords(for category: WordCategory) -> [Word] {
@@ -65,7 +71,10 @@ final class QuizServiceTests: XCTestCase {
         ]
 
         let mockService = MockWordService(mockWords: mockWords)
-        quizService = QuizService(wordService: mockService)
+        quizService = QuizService()
+        CoreServiceLocator.shared.add {
+            Register(WordServiceable.self) { mockService }
+        }
     }
 
     func testGeneratesCorrectNumberOfQuestions() {

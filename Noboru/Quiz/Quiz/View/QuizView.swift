@@ -1,6 +1,7 @@
-import SwiftUI
-import NoboruCore
 import Kana
+import SwiftUI
+import Additions
+import NoboruCore
 
 struct QuizView: View {
     @Environment(\.dismiss) private var dismiss
@@ -196,7 +197,12 @@ struct QuizView: View {
         category: .hold,
         mode: .multipleChoice,
         showRomaji: true
-    ))
+    )).injecting {
+        [
+            Register(WordServiceable.self) { WordService() },
+            Register(QuizServiceable.self) { QuizService() },
+        ]
+    }
 }
 
 #Preview("Free Input Mode") {
@@ -205,7 +211,12 @@ struct QuizView: View {
         category: .action,
         mode: .freeInput,
         showRomaji: false
-    ))
+    )).injecting {
+        [
+            Register(WordServiceable.self) { WordService() },
+            Register(QuizServiceable.self) { QuizService() },
+        ]
+    }
 }
 #Preview("Finished Quiz") {
     QuizView(
@@ -230,5 +241,10 @@ struct QuizView: View {
                 showRomaji: false
             )
         )
-    )
+    ).injecting {
+        [
+            Register(WordServiceable.self) { WordService() },
+            Register(QuizServiceable.self) { QuizService() },
+        ]
+    }
 }

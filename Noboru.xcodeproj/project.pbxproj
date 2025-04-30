@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4176F9742DBD3D80007B9932 /* NoboruCore in Frameworks */ = {isa = PBXBuildFile; productRef = 4176F9732DBD3D80007B9932 /* NoboruCore */; };
 		4176F9872DBD4606007B9932 /* Kana in Frameworks */ = {isa = PBXBuildFile; productRef = 4176F9862DBD4606007B9932 /* Kana */; };
+		41F5F2042DC269AB00A6A1B0 /* Additions in Frameworks */ = {isa = PBXBuildFile; productRef = 41F5F2032DC269AB00A6A1B0 /* Additions */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41F5F2042DC269AB00A6A1B0 /* Additions in Frameworks */,
 				4176F9742DBD3D80007B9932 /* NoboruCore in Frameworks */,
 				4176F9872DBD4606007B9932 /* Kana in Frameworks */,
 			);
@@ -139,6 +141,7 @@
 			packageProductDependencies = (
 				4176F9732DBD3D80007B9932 /* NoboruCore */,
 				4176F9862DBD4606007B9932 /* Kana */,
+				41F5F2032DC269AB00A6A1B0 /* Additions */,
 			);
 			productName = Noboru;
 			productReference = 4176F91F2DBCE2EA007B9932 /* Noboru.app */;
@@ -224,6 +227,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				4176F9852DBD4606007B9932 /* XCRemoteSwiftPackageReference "Kana" */,
+				41F5F2022DC269AB00A6A1B0 /* XCRemoteSwiftPackageReference "SwiftAdditions" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 4176F9202DBCE2EA007B9932 /* Products */;
@@ -598,6 +602,14 @@
 				minimumVersion = 1.1.0;
 			};
 		};
+		41F5F2022DC269AB00A6A1B0 /* XCRemoteSwiftPackageReference "SwiftAdditions" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AdevintaSpain/SwiftAdditions.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -609,6 +621,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4176F9852DBD4606007B9932 /* XCRemoteSwiftPackageReference "Kana" */;
 			productName = Kana;
+		};
+		41F5F2032DC269AB00A6A1B0 /* Additions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 41F5F2022DC269AB00A6A1B0 /* XCRemoteSwiftPackageReference "SwiftAdditions" */;
+			productName = Additions;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
