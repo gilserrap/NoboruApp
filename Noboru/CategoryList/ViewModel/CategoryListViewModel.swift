@@ -11,8 +11,8 @@ public class CategoryListViewModel: ObservableObject {
 
     public init() {}
 
-    public func loadWords(from bundle: Bundle = .main) {
-        self.words = wordService.getAllWords()
+    public func loadWords(from bundle: Bundle = .main) async {
+        self.words = await wordService.getAllWords()
     }
 
     public func words(for category: WordCategory) -> [Word] {

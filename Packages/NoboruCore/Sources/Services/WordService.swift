@@ -1,39 +1,68 @@
 import Foundation
 
 public protocol WordServiceable {
-    func getAllWords() -> [Word]
-    func getWords(for category: WordCategory) -> [Word]
-    func generateOptions(correctWord: Word, category: WordCategory) -> [String]
+    func getAllWords() async -> [Word]
+    func getWords(for category: WordCategory) async -> [Word]
+    func generateOptions(correctWord: Word, category: WordCategory) async -> [String]
 }
 
 public final class WordService: WordServiceable {
-    private struct JSON {
-        static let wordList = "nonboru_full_wordlist"
-    }
+
+    private var wordCache: [Word] = []
 
     public init() {}
 
-    public func getAllWords() -> [Word] {
-        guard let url = Bundle.module.url(forResource: JSON.wordList, withExtension: "json"),
-              let data = try? Data(contentsOf: url),
-              let words = try? JSONDecoder().decode([Word].self, from: data) else {
-            return []
+    public func getAllWords() async -> [Word] {
+        guard wordCache.isEmpty else {
+            return wordCache
         }
-        return words
+        do {
+            return try await loadRemoteWords()
+        } catch {
+            return loadLocalWords()
+        }
     }
 
-    public func getWords(for category: WordCategory) -> [Word] {
-        getAllWords().filter { $0.category == category }
+    public func getWords(for category: WordCategory) async -> [Word] {
+        await getAllWords().filter { $0.category == category }
     }
 
-    public func generateOptions(correctWord: Word, category: WordCategory) -> [String] {
-        let wrongAnswers = getAllWords()
+    public func generateOptions(correctWord: Word, category: WordCategory) async -> [String] {
+        let wrongAnswers = await getAllWords()
             .filter { $0.category == category && $0.meaning != correctWord.meaning }
             .shuffled()
             .prefix(3)
             .map { $0.meaning }
 
         return (wrongAnswers + [correctWord.meaning]).shuffled()
+    }
+
+    // MARK: - Word fetching
+    private func loadLocalWords(from bundle: Bundle = .main) -> [Word] {
+        guard let data = try? Data(contentsOf: URLValue.localFile),
+              let words = try? JSONDecoder().decode([Word].self, from: data) else {
+            return []
+        }
+        wordCache = words
+        return words
+    }
+
+    private func loadRemoteWords() async throws -> [Word] {
+        let (data, _) = try await URLSession.shared.data(from: URLValue.gist)
+        let words = try JSONDecoder().decode([Word].self, from: data)
+        wordCache = words
+        return words
+    }
+
+    // MARK: - URL values
+    private struct URLValue {
+        static let localFile = Bundle.module.url(
+            forResource: "nonboru_full_wordlist",
+            withExtension: "json"
+        )!
+        static let gist = URL(
+            string: "https://gist.githubusercontent.com/gilserrap/a47b748a8833e8c7ab6491b20fb78814/raw/6c521f6418cbe82364247e18a9e7729a60d7bd70/noboru_full_wordlist.json"
+        )!
     }
 }
 

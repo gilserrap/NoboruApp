@@ -26,7 +26,7 @@ struct CategoryListView: View {
         }
         .navigationTitle("Noboru 📚")
         .task {
-            viewModel.loadWords()
+            await viewModel.loadWords()
         }
     }
 

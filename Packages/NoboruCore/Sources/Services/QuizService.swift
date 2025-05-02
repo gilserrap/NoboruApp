@@ -2,7 +2,7 @@ import Foundation
 import Additions
 
 public protocol QuizServiceable {
-    func generateQuiz(with settings: QuizSettings) -> [QuizQuestion]
+    func generateQuiz(with settings: QuizSettings) async -> [QuizQuestion]
 }
 
 public final class QuizService: QuizServiceable {
@@ -11,19 +11,20 @@ public final class QuizService: QuizServiceable {
 
     public init() {}
 
-    public func generateQuiz(with settings: QuizSettings) -> [QuizQuestion] {
-        let words = wordService.getWords(for: settings.category).shuffled().prefix(10)
+    public func generateQuiz(with settings: QuizSettings) async -> [QuizQuestion] {
+        let words = await wordService.getWords(for: settings.category).shuffled().prefix(10)
 
-        let questions = words.map { word in
-            let options = settings.mode == .multipleChoice
+        var questions: [QuizQuestion] = []
+        for word in words {
+            let options = await settings.mode == .multipleChoice
                 ? generateOptions(correctWord: word, category: settings.category)
                 : nil
-            return QuizQuestion(
+            questions.append(QuizQuestion(
                 kanaText: Self.selectKana(for: word, basedOn: settings.script),
                 sourceScript: word.correctScript.toScriptOption(),
                 correctAnswer: word.meaning,
                 options: options
-            )
+            ))
         }
 
         return questions
@@ -45,8 +46,8 @@ public final class QuizService: QuizServiceable {
         }
     }
 
-    private func generateOptions(correctWord: Word, category: WordCategory) -> [String] {
-        let wrongAnswers = wordService.getWords(for: category)
+    private func generateOptions(correctWord: Word, category: WordCategory) async -> [String] {
+        let wrongAnswers = await wordService.getWords(for: category)
             .filter { $0.meaning != correctWord.meaning }
             .shuffled()
             .prefix(3)

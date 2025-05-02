@@ -30,7 +30,9 @@ public final class QuizViewModel: ObservableObject {
 
     public init(settings: QuizSettings) {
         self.settings = settings
-        loadQuestions()
+        Task {
+            await loadQuestions()
+        }
     }
 
     internal init(model: State, settings: QuizSettings) {
@@ -38,8 +40,8 @@ public final class QuizViewModel: ObservableObject {
         self.state = model
     }
 
-    private func loadQuestions() {
-        state.questions = quizService.generateQuiz(with: settings)
+    private func loadQuestions() async {
+        state.questions = await quizService.generateQuiz(with: settings)
     }
 
     public func handleMultipleChoiceAnswer(_ index: Int) {
