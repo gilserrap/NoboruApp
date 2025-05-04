@@ -9,7 +9,8 @@ public protocol WordServiceable {
 
 public final class WordService: WordServiceable {
     @Inject private var remote: RemoteWordDataSourceable
-    @Inject private var local: LocalWordDataSourceable
+    @Inject private var local: InMemoryWordDataSourceable
+    @Inject private var coreData: CoreDataWordDataSourceable
 
     private var wordCache: WordList?
 
@@ -21,8 +22,15 @@ public final class WordService: WordServiceable {
         }
         do {
             let remoteList = try await remote.loadWords()
-            wordCache = remoteList
-            return remoteList.words
+            let coreDataList = try await coreData.loadWords()
+            if coreDataList.updatedAt >= remoteList.updatedAt {
+                wordCache = coreDataList
+                return coreDataList.words
+            } else {
+                wordCache = remoteList
+                try await coreData.save(words: remoteList)
+                return remoteList.words
+            }
         } catch {
             do {
                 let fallback = try await local.loadWords()

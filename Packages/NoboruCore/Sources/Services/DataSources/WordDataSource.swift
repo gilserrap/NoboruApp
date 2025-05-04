@@ -1,5 +1,6 @@
 import Foundation
 
-public protocol WordDataSource {
+public protocol WordDataSourceable {
     func loadWords() async throws -> WordList
+    func save(words: WordList) async throws
 }

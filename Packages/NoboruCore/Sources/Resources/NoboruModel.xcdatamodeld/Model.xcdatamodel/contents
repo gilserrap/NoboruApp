@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="23788" systemVersion="24D81" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="CDWord" representedClassName="CDWord" syncable="YES">
+        <attribute name="category" optional="YES" attributeType="String"/>
+        <attribute name="correctScript" optional="YES" attributeType="String"/>
+        <attribute name="hiragana" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="katakana" optional="YES" attributeType="String"/>
+        <attribute name="meaning" optional="YES" attributeType="String"/>
+        <attribute name="romaji" optional="YES" attributeType="String"/>
+        <relationship name="list" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDWordList" inverseName="words" inverseEntity="CDWordList"/>
+    </entity>
+    <entity name="CDWordList" representedClassName="CDWordList" syncable="YES">
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="words" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CDWord" inverseName="list" inverseEntity="CDWord"/>
+    </entity>
+</model>

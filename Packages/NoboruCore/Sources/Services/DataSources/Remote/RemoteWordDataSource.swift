@@ -1,6 +1,6 @@
 import Foundation
 
-public protocol RemoteWordDataSourceable: WordDataSource {}
+public protocol RemoteWordDataSourceable: WordDataSourceable {}
 
 public final class RemoteWordDataSource: RemoteWordDataSourceable {
 
@@ -15,5 +15,9 @@ public final class RemoteWordDataSource: RemoteWordDataSourceable {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
         return try decoder.decode(WordList.self, from: data)
+    }
+
+    public func save(words: WordList) async throws {
+        assertionFailure("Remote data source does not support saving words.")
     }
 }
