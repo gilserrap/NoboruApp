@@ -8,14 +8,11 @@ public protocol WordServiceable {
 
 public final class WordService: WordServiceable {
 
-    private var wordCache: [Word] = []
+    private var wordCache: WordList? = nil
 
     public init() {}
 
     public func getAllWords() async -> [Word] {
-        guard wordCache.isEmpty else {
-            return wordCache
-        }
         do {
             return try await loadRemoteWords()
         } catch {
@@ -40,18 +37,20 @@ public final class WordService: WordServiceable {
     // MARK: - Word fetching
     private func loadLocalWords(from bundle: Bundle = .main) -> [Word] {
         guard let data = try? Data(contentsOf: URLValue.localFile),
-              let words = try? JSONDecoder().decode([Word].self, from: data) else {
+              let wordList = try? JSONDecoder().decode(WordList.self, from: data) else {
             return []
         }
-        wordCache = words
-        return words
+        wordCache = wordList
+        return wordList.words
     }
 
     private func loadRemoteWords() async throws -> [Word] {
         let (data, _) = try await URLSession.shared.data(from: URLValue.gist)
-        let words = try JSONDecoder().decode([Word].self, from: data)
-        wordCache = words
-        return words
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+        let wordList = try decoder.decode(WordList.self, from: data)
+        wordCache = wordList
+        return wordList.words
     }
 
     // MARK: - URL values
