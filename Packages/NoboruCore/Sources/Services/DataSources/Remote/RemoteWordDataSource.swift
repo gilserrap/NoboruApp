@@ -5,7 +5,7 @@ public protocol RemoteWordDataSourceable: WordDataSourceable {}
 public final class RemoteWordDataSource: RemoteWordDataSourceable {
 
     private struct Constant {
-        static let defaultUrl = URL(string: "https://gist.githubusercontent.com/gilserrap/a47b748a8833e8c7ab6491b20fb78814/raw/6c521f6418cbe82364247e18a9e7729a60d7bd70/noboru_full_wordlist.json")!
+        static let defaultUrl = URL(string: "https://gist.githubusercontent.com/gilserrap/a47b748a8833e8c7ab6491b20fb78814/raw/c994f4565f0e789b7e3018837e7b2810cc7b1311/noboru_full_wordlist.json")!
     }
 
     public init() {}

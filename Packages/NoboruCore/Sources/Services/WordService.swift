@@ -9,37 +9,44 @@ public protocol WordServiceable {
 
 public final class WordService: WordServiceable {
     @Inject private var remote: RemoteWordDataSourceable
-    @Inject private var local: InMemoryWordDataSourceable
+    @Inject private var memory: InMemoryWordDataSourceable
     @Inject private var coreData: CoreDataWordDataSourceable
-
-    private var wordCache: WordList?
 
     public init() {}
 
     public func getAllWords() async -> [Word] {
-        if let cached = wordCache {
+        if let cached = try? await memory.loadWords() {
             return cached.words
         }
         do {
-            let remoteList = try await remote.loadWords()
-            let coreDataList = try await coreData.loadWords()
-            if coreDataList.updatedAt >= remoteList.updatedAt {
-                wordCache = coreDataList
-                return coreDataList.words
-            } else {
-                wordCache = remoteList
-                try await coreData.save(words: remoteList)
-                return remoteList.words
-            }
+            return try await loadRemoteWords()
         } catch {
             do {
-                let fallback = try await local.loadWords()
-                wordCache = fallback
-                return fallback.words
+                return try await loadCoreDataWords()
             } catch {
-                return []
+                return await loadHardcodedWords()
             }
         }
+    }
+
+    private func loadRemoteWords() async throws -> [Word] {
+        let remoteList = try await remote.loadWords()
+        try? await self.memory.save(words: remoteList)
+        try? await self.coreData.save(words: remoteList)
+        return remoteList.words
+    }
+
+    private func loadCoreDataWords() async throws -> [Word] {
+        let coreData = try await coreData.loadWords()
+        try await self.memory.save(words: coreData)
+        return coreData.words
+    }
+
+    private func loadHardcodedWords() async -> [Word] {
+        let localCopy = WordList.loadFromLocalFile()
+        try? await self.memory.save(words: localCopy)
+        try? await self.coreData.save(words: localCopy)
+        return localCopy.words
     }
 
     public func getWords(for category: WordCategory) async -> [Word] {

@@ -77,7 +77,7 @@ final class QuizServiceTests: XCTestCase {
         }
     }
 
-    func testGeneratesCorrectNumberOfQuestions() {
+    func testGeneratesCorrectNumberOfQuestions() async {
         let settings = QuizSettings(
             script: .correct,
             category: .hold,
@@ -85,11 +85,11 @@ final class QuizServiceTests: XCTestCase {
             showRomaji: true
         )
 
-        let questions = quizService.generateQuiz(with: settings)
+        let questions = await quizService.generateQuiz(with: settings)
         XCTAssertLessThanOrEqual(questions.count, 10)
     }
 
-    func testAllQuestionsMatchCategory() {
+    func testAllQuestionsMatchCategory() async throws {
         let settings = QuizSettings(
             script: .hiragana,
             category: .action,
@@ -97,8 +97,8 @@ final class QuizServiceTests: XCTestCase {
             showRomaji: false
         )
 
-        let questions = quizService.generateQuiz(with: settings)
-        let expectedMeanings = mockWords
+        let questions = await quizService.generateQuiz(with: settings)
+        let expectedMeanings = await mockWords
             .filter { $0.category == .action }
             .map(\.meaning)
 
@@ -107,7 +107,7 @@ final class QuizServiceTests: XCTestCase {
         }
     }
 
-    func testKanaTextRespectsScriptSetting() {
+    func testKanaTextRespectsScriptSetting() async  {
         let settings = QuizSettings(
             script: .katakana,
             category: .hold,
@@ -115,8 +115,8 @@ final class QuizServiceTests: XCTestCase {
             showRomaji: false
         )
 
-        let questions = quizService.generateQuiz(with: settings)
-        let expectedKatakana = mockWords
+        let questions = await quizService.generateQuiz(with: settings)
+        let expectedKatakana = await mockWords
             .filter { $0.category == .hold }
             .map(\.katakana)
 
@@ -126,7 +126,7 @@ final class QuizServiceTests: XCTestCase {
         }
     }
 
-    func testCorrectAnswerIncludedInOptions() {
+    func testCorrectAnswerIncludedInOptions() async {
         let settings = QuizSettings(
             script: .correct,
             category: .hold,
@@ -134,7 +134,7 @@ final class QuizServiceTests: XCTestCase {
             showRomaji: false
         )
 
-        let questions = quizService.generateQuiz(with: settings)
+        let questions = await quizService.generateQuiz(with: settings)
 
         for question in questions {
             XCTAssertNotNil(question.options)
@@ -142,7 +142,7 @@ final class QuizServiceTests: XCTestCase {
         }
     }
 
-    func testMultipleChoiceOptionsAreUnique() {
+    func testMultipleChoiceOptionsAreUnique() async {
         let settings = QuizSettings(
             script: .correct,
             category: .hold,
@@ -150,7 +150,7 @@ final class QuizServiceTests: XCTestCase {
             showRomaji: false
         )
 
-        let questions = quizService.generateQuiz(with: settings)
+        let questions = await quizService.generateQuiz(with: settings)
 
         for question in questions {
             let options = question.options ?? []
