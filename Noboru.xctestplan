@@ -1,0 +1,36 @@
+{
+  "configurations" : [
+    {
+      "id" : "4872422F-3A9B-4E38-A9FF-FA6D10603886",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Noboru.xcodeproj",
+      "identifier" : "4176F91E2DBCE2EA007B9932",
+      "name" : "Noboru"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Packages\/NoboruCore",
+        "identifier" : "NoboruCoreTests",
+        "name" : "NoboruCoreTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Noboru.xcodeproj",
+        "identifier" : "4176F92B2DBCE2EB007B9932",
+        "name" : "NoboruTests"
+      }
+    }
+  ],
+  "version" : 1
+}

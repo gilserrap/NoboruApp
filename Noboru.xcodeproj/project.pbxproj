@@ -20,19 +20,11 @@
 			remoteGlobalIDString = 4176F91E2DBCE2EA007B9932;
 			remoteInfo = Noboru;
 		};
-		4176F9372DBCE2EB007B9932 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4176F9172DBCE2EA007B9932 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4176F91E2DBCE2EA007B9932;
-			remoteInfo = Noboru;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		4176F91F2DBCE2EA007B9932 /* Noboru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Noboru.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4176F92C2DBCE2EB007B9932 /* NoboruTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoboruTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4176F9362DBCE2EB007B9932 /* NoboruUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoboruUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4176F9632DBD3B9D007B9932 /* NoboruCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = NoboruCore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -45,11 +37,6 @@
 		4176F92F2DBCE2EB007B9932 /* NoboruTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = NoboruTests;
-			sourceTree = "<group>";
-		};
-		4176F9392DBCE2EB007B9932 /* NoboruUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = NoboruUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -72,13 +59,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4176F9332DBCE2EB007B9932 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -88,7 +68,6 @@
 				4176F9642DBD3B9D007B9932 /* Packages */,
 				4176F9212DBCE2EA007B9932 /* Noboru */,
 				4176F92F2DBCE2EB007B9932 /* NoboruTests */,
-				4176F9392DBCE2EB007B9932 /* NoboruUITests */,
 				4176F9722DBD3D80007B9932 /* Frameworks */,
 				4176F9202DBCE2EA007B9932 /* Products */,
 			);
@@ -99,7 +78,6 @@
 			children = (
 				4176F91F2DBCE2EA007B9932 /* Noboru.app */,
 				4176F92C2DBCE2EB007B9932 /* NoboruTests.xctest */,
-				4176F9362DBCE2EB007B9932 /* NoboruUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -170,29 +148,6 @@
 			productReference = 4176F92C2DBCE2EB007B9932 /* NoboruTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		4176F9352DBCE2EB007B9932 /* NoboruUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4176F9462DBCE2EB007B9932 /* Build configuration list for PBXNativeTarget "NoboruUITests" */;
-			buildPhases = (
-				4176F9322DBCE2EB007B9932 /* Sources */,
-				4176F9332DBCE2EB007B9932 /* Frameworks */,
-				4176F9342DBCE2EB007B9932 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4176F9382DBCE2EB007B9932 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				4176F9392DBCE2EB007B9932 /* NoboruUITests */,
-			);
-			name = NoboruUITests;
-			packageProductDependencies = (
-			);
-			productName = NoboruUITests;
-			productReference = 4176F9362DBCE2EB007B9932 /* NoboruUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -207,10 +162,6 @@
 						CreatedOnToolsVersion = 16.3;
 					};
 					4176F92B2DBCE2EB007B9932 = {
-						CreatedOnToolsVersion = 16.3;
-						TestTargetID = 4176F91E2DBCE2EA007B9932;
-					};
-					4176F9352DBCE2EB007B9932 = {
 						CreatedOnToolsVersion = 16.3;
 						TestTargetID = 4176F91E2DBCE2EA007B9932;
 					};
@@ -236,7 +187,6 @@
 			targets = (
 				4176F91E2DBCE2EA007B9932 /* Noboru */,
 				4176F92B2DBCE2EB007B9932 /* NoboruTests */,
-				4176F9352DBCE2EB007B9932 /* NoboruUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -250,13 +200,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		4176F92A2DBCE2EB007B9932 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4176F9342DBCE2EB007B9932 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -280,13 +223,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4176F9322DBCE2EB007B9932 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -294,11 +230,6 @@
 			isa = PBXTargetDependency;
 			target = 4176F91E2DBCE2EA007B9932 /* Noboru */;
 			targetProxy = 4176F92D2DBCE2EB007B9932 /* PBXContainerItemProxy */;
-		};
-		4176F9382DBCE2EB007B9932 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4176F91E2DBCE2EA007B9932 /* Noboru */;
-			targetProxy = 4176F9372DBCE2EB007B9932 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -518,40 +449,6 @@
 			};
 			name = Release;
 		};
-		4176F9472DBCE2EB007B9932 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = EJ3X4MB8HS;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = nil.app.NoboruUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Noboru;
-			};
-			name = Debug;
-		};
-		4176F9482DBCE2EB007B9932 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = EJ3X4MB8HS;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = nil.app.NoboruUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Noboru;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -578,15 +475,6 @@
 			buildConfigurations = (
 				4176F9442DBCE2EB007B9932 /* Debug */,
 				4176F9452DBCE2EB007B9932 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4176F9462DBCE2EB007B9932 /* Build configuration list for PBXNativeTarget "NoboruUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4176F9472DBCE2EB007B9932 /* Debug */,
-				4176F9482DBCE2EB007B9932 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
