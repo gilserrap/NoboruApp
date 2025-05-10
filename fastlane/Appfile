@@ -1,10 +1,5 @@
-app_identifier(APP_BUNDLE_ID) # The bundle identifier of your app
+app_identifier(ENV['APP_BUNDLE_ID']) # The bundle identifier of your app
 
-itc_team_id(APP_STORE_TEAM_ID) # App Store Connect Team ID
-team_id(DEVELOPER_PORTAL_TEAM_ID) # Developer Portal Team ID
-
-api_key({
-  key_id: APP_STORE_KEY_ID,
-  issuer_id: APP_STORE_KEY_ISSUER_ID,
-  key_filepath: APP_STOPRE_KEY_PATH
-})
+itc_team_id(ENV['APP_STORE_TEAM_ID']) # App Store Connect Team ID
+team_id(ENV['DEVELOPER_PORTAL_TEAM_ID']) # Developer Portal Team ID
+apple_id(ENV['DEVELOPER_PORTAL_MAIL'])
