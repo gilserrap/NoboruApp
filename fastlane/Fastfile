@@ -25,8 +25,13 @@ platform :ios do
 
   desc "Creates a tag with current project version and build number."
   private_lane :add_version_tag do
-    version = get_version_number(xcodeproj: ENV['XCODE_PROJECT'], target: ENV['XCODE_SCHEME'])
-    build = get_build_number(xcodeproj: ENV['XCODE_PROJECT'])
+    version = get_version_number(
+      xcodeproj: ENV['XCODE_PROJECT'], 
+      target: ENV['XCODE_SCHEME']
+    )
+    build = get_build_number(
+      xcodeproj: ENV['XCODE_PROJECT']
+    )
     add_git_tag(
       tag: "#{version}(#{build})"
     )
